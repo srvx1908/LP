@@ -1,0 +1,4 @@
+ADDONE	1
+LDA	1
+ADD	1
+STA	1

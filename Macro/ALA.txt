@@ -1,4 +1,0 @@
-ALA for ADDONE: [&ARG1, &ARG2]
-ALA for LDA: [&ARG1]
-ALA for ADD: [&ARG2]
-ALA for STA: [&ARG1]

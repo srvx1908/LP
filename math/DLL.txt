@@ -1,0 +1,64 @@
+public class MathOperation {
+    public static double add(double a, double b) {
+        return a + b;
+    }
+
+    public static double subtract(double a, double b) {
+        return a - b;
+    }
+}
+
+
+
+
+
+import javax.swing.*;
+
+public class MathApp {
+    public static void main(String[] args) {
+
+        JFrame frame = new JFrame("Math Operations");
+        frame.setSize(300, 150);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JPanel panel = new JPanel();
+        frame.add(panel);
+
+        JTextField num1 = new JTextField(10);
+        JTextField num2 = new JTextField(10);
+        JLabel result = new JLabel("Result: ");
+
+        JButton addBtn = new JButton("Add");
+        JButton subBtn = new JButton("Subtract");
+
+        panel.add(new JLabel("Number 1:"));
+        panel.add(num1);
+        panel.add(new JLabel("Number 2:"));
+        panel.add(num2);
+        panel.add(addBtn);
+        panel.add(subBtn);
+        panel.add(result);
+
+        addBtn.addActionListener(e -> {
+            try {
+                double a = Double.parseDouble(num1.getText());
+                double b = Double.parseDouble(num2.getText());
+                result.setText("Result: " + MathOperation.add(a, b));
+            } catch (Exception ex) {
+                result.setText("Invalid input.");
+            }
+        });
+
+        subBtn.addActionListener(e -> {
+            try {
+                double a = Double.parseDouble(num1.getText());
+                double b = Double.parseDouble(num2.getText());
+                result.setText("Result: " + MathOperation.subtract(a, b));
+            } catch (Exception ex) {
+                result.setText("Invalid input.");
+            }
+        });
+
+        frame.setVisible(true);
+    }
+}
